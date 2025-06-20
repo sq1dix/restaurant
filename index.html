@@ -6,9 +6,7 @@
   <title>Меню Ресторана</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Georgia', serif;
@@ -36,7 +34,6 @@
       width: 100vw;
       height: 100vh;
       flex-shrink: 0;
-      scroll-snap-align: start;
       padding: 20px;
       background-size: cover;
       background-position: center;
@@ -84,24 +81,6 @@
       font-size: 14px;
       color: #aaa;
     }
-    .nav-buttons {
-      position: fixed;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    .nav-buttons button {
-      background: rgba(255,255,255,0.3);
-      border: none;
-      color: #fff;
-      font-size: 32px;
-      padding: 10px 20px;
-      cursor: pointer;
-      pointer-events: all;
-    }
   </style>
 </head>
 <body>
@@ -111,85 +90,82 @@
 
   <div id="swipe-container" style="overflow: hidden;">
     <main id="swipe-content">
-      <section class="page" style="background-image: url('https://i.imgur.com/XKUQbT5.jpg');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80');">
         <h2>Закуски</h2>
         <div class="menu-item">
-          <img src="https://i.imgur.com/I2iT3z1.jpg" alt="Капрезе">
+          <img src="https://source.unsplash.com/60x60/?caprese" alt="Капрезе">
           <div class="menu-text">
             <h3>Капрезе</h3>
             <p>Моцарелла, томаты, базилик</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/mjc3hJk.jpg" alt="Паштет">
+          <img src="https://source.unsplash.com/60x60/?pate" alt="Паштет">
           <div class="menu-text">
             <h3>Паштет из утки</h3>
             <p>С хрустящим багетом</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/E4Ecs4G.jpg" alt="Рийет">
+          <img src="https://source.unsplash.com/60x60/?meat" alt="Рийет">
           <div class="menu-text">
             <h3>Рийет</h3>
             <p>Свинина, мед, специи</p>
           </div>
         </div>
       </section>
-
-      <section class="page" style="background-image: url('https://i.imgur.com/9I7QGNd.jpg');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1559628233-4b8c3fba1b6e?auto=format&fit=crop&w=1400&q=80');">
         <h2>Основные блюда</h2>
         <div class="menu-item">
-          <img src="https://i.imgur.com/oZgPpZk.jpg" alt="Утка конфит">
+          <img src="https://source.unsplash.com/60x60/?duck" alt="Утка конфит">
           <div class="menu-text">
             <h3>Утка конфит</h3>
             <p>Запечённая утка с апельсиновым соусом</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/FjVcKmQ.jpg" alt="Тальята">
+          <img src="https://source.unsplash.com/60x60/?steak" alt="Стейк">
           <div class="menu-text">
-            <h3>Тальята</h3>
+            <h3>Стейк</h3>
             <p>Говядина с картофелем</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/Nm9EGk0.jpg" alt="Рататуй">
+          <img src="https://source.unsplash.com/60x60/?ratatouille" alt="Рататуй">
           <div class="menu-text">
             <h3>Рататуй</h3>
-            <p>Традиционные овощи Прованса</p>
+            <p>Овощи по-провански</p>
           </div>
         </div>
       </section>
-
-      <section class="page" style="background-image: url('https://i.imgur.com/JcoKc8g.jpg');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1605478759808-7e33e39990ab?auto=format&fit=crop&w=1400&q=80');">
         <h2>Салаты</h2>
         <div class="menu-item">
-          <img src="https://i.imgur.com/98a0sVJ.jpg" alt="Нисуаз">
+          <img src="https://source.unsplash.com/60x60/?salad" alt="Нисуаз">
           <div class="menu-text">
             <h3>Нисуаз</h3>
             <p>Тунец, картофель, яйцо, фасоль</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/yiXP4Yc.jpg" alt="Фарро">
+          <img src="https://source.unsplash.com/60x60/?vegetable-salad" alt="Фарро">
           <div class="menu-text">
             <h3>Фарро</h3>
             <p>Злаки с овощами и зеленью</p>
           </div>
         </div>
       </section>
-
-      <section class="page" style="background-image: url('https://i.imgur.com/v99BDHG.jpg');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80');">
         <h2>Десерты</h2>
         <div class="menu-item">
-          <img src="https://i.imgur.com/gYrxtYY.jpg" alt="Тирамису">
+          <img src="https://source.unsplash.com/60x60/?tiramisu" alt="Тирамису">
           <div class="menu-text">
             <h3>Тирамису</h3>
-            <p>Савоярди с кремом и кофе</p>
+            <p>Кофейный крем-десерт</p>
           </div>
         </div>
         <div class="menu-item">
-          <img src="https://i.imgur.com/AsUeHzf.jpg" alt="Крем-брюле">
+          <img src="https://source.unsplash.com/60x60/?creme-brulee" alt="Крем-брюле">
           <div class="menu-text">
             <h3>Крем-брюле</h3>
             <p>Французский ванильный десерт</p>
@@ -199,11 +175,6 @@
     </main>
   </div>
 
-  <div class="nav-buttons">
-    <button onclick="changeSlide(-1)">&#10094;</button>
-    <button onclick="changeSlide(1)">&#10095;</button>
-  </div>
-
   <footer>
     &copy; 2025 Французский ресторан | Все права защищены
   </footer>
@@ -211,13 +182,14 @@
   <script>
     const content = document.getElementById('swipe-content');
     let currentPage = 0;
-    const totalPages = 4;
+    const totalPages = document.querySelectorAll('.page').length;
 
     function changeSlide(delta) {
       currentPage = Math.max(0, Math.min(totalPages - 1, currentPage + delta));
       content.style.transform = `translateX(-${currentPage * 100}vw)`;
     }
 
+    // Touch-свайпы для мобильных
     let startX = 0;
     content.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
@@ -228,13 +200,10 @@
       if (diff < -50) changeSlide(-1);
     });
 
-    content.addEventListener('mousedown', e => {
-      startX = e.clientX;
-    });
-    content.addEventListener('mouseup', e => {
-      const diff = startX - e.clientX;
-      if (diff > 50) changeSlide(1);
-      if (diff < -50) changeSlide(-1);
+    // Клавиши на ПК
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') changeSlide(1);
+      if (e.key === 'ArrowLeft') changeSlide(-1);
     });
   </script>
 </body>
