@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Меню Ресторана</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
     body {
@@ -20,14 +20,14 @@
     }
     header h1 {
       font-size: 42px;
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Playfair Display', serif;
       margin-bottom: 0;
       color: #fff;
     }
     main {
       display: flex;
       flex-direction: row;
-      width: 400vw;
+      width: 500vw;
       transition: transform 0.6s ease-in-out;
     }
     .page {
@@ -38,7 +38,7 @@
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
-      background-color: rgba(0,0,0,0.6);
+      background-color: rgba(0,0,0,0.5);
       overflow-y: auto;
     }
     h2 {
@@ -159,6 +159,29 @@
           <p>Французский ванильный десерт</p>
         </div>
       </section>
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1589927986089-35812389fcc4?auto=format&fit=crop&w=1400&q=80');">
+        <h2>Напитки</h2>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?red-wine">
+          <h3>Красное вино</h3>
+          <p>Бургундия, сухое</p>
+        </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?white-wine">
+          <h3>Белое вино</h3>
+          <p>Шабли, охлаждённое</p>
+        </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?champagne">
+          <h3>Шампанское</h3>
+          <p>Классическое игристое</p>
+        </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?lemonade">
+          <h3>Домашний лимонад</h3>
+          <p>Лимон, мята, лёд</p>
+        </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?coffee">
+          <h3>Кофе</h3>
+          <p>Эспрессо или капучино</p>
+        </div>
+      </section>
     </main>
   </div>
 
@@ -195,7 +218,6 @@
       if (e.key === 'ArrowLeft') changeSlide(-1);
     });
 
-    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     document.querySelectorAll('.menu-item').forEach(item => {
