@@ -12,29 +12,40 @@
     body {
       margin: 0;
       font-family: 'Georgia', serif;
-      background: #fffaf2;
-      color: #333;
-      scroll-behavior: smooth;
+      background-color: #000;
+      color: #fff;
       overflow-x: hidden;
     }
     header {
       text-align: center;
-      padding: 40px 20px 10px;
+      padding: 30px 20px 10px;
     }
     header h1 {
-      font-size: 48px;
+      font-size: 42px;
       font-family: 'Great Vibes', cursive;
       margin-bottom: 0;
+      color: #fff;
     }
-    section {
-      min-height: 100vh;
-      padding: 30px 20px;
-      max-width: 800px;
-      margin: auto;
+    main {
+      display: flex;
+      flex-direction: row;
+      width: 400vw;
+      transition: transform 0.6s ease-in-out;
+    }
+    .page {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
       scroll-snap-align: start;
+      padding: 20px;
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.6);
+      overflow-y: auto;
     }
     h2 {
-      font-size: 28px;
+      font-size: 24px;
       text-align: center;
       margin-bottom: 20px;
       border-bottom: 2px solid #d4af37;
@@ -42,128 +53,188 @@
       padding-bottom: 5px;
     }
     .menu-item {
-      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      margin: 15px 0;
+      gap: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 10px;
     }
-    .menu-item h3 {
+    .menu-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .menu-text h3 {
       margin: 0;
-      font-size: 20px;
+      font-size: 16px;
       text-transform: uppercase;
+      color: #fff;
     }
-    .menu-item p {
-      margin: 5px 0 0;
-      color: #666;
+    .menu-text p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #ddd;
     }
     footer {
       text-align: center;
-      padding: 40px 10px 20px;
+      padding: 20px 10px;
       font-size: 14px;
-      color: #888;
+      color: #aaa;
     }
-
-    main {
+    .nav-buttons {
+      position: fixed;
+      top: 50%;
+      width: 100%;
       display: flex;
-      flex-direction: row;
-      width: 400vw;
-      transition: transform 0.5s ease-in-out;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      pointer-events: none;
     }
-    .page {
-      width: 100vw;
-      flex-shrink: 0;
-      scroll-snap-align: start;
+    .nav-buttons button {
+      background: rgba(255,255,255,0.3);
+      border: none;
+      color: #fff;
+      font-size: 32px;
+      padding: 10px 20px;
+      cursor: pointer;
+      pointer-events: all;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Меню</h1>
+    <h1>Французское меню</h1>
   </header>
 
   <div id="swipe-container" style="overflow: hidden;">
     <main id="swipe-content">
-      <section class="page" id="appetizers">
+      <section class="page" style="background-image: url('https://i.imgur.com/XKUQbT5.jpg');">
         <h2>Закуски</h2>
         <div class="menu-item">
-          <h3>Буффало Капрезе</h3>
-          <p>Свежая моцарелла с помидорами черри и базиликом</p>
+          <img src="https://i.imgur.com/I2iT3z1.jpg" alt="Капрезе">
+          <div class="menu-text">
+            <h3>Капрезе</h3>
+            <p>Моцарелла, томаты, базилик</p>
+          </div>
         </div>
         <div class="menu-item">
-          <h3>Свежий тунец</h3>
-          <p>Тёплая куриная грудка, бекон, авокадо, салат, ромэн, помидоры</p>
+          <img src="https://i.imgur.com/mjc3hJk.jpg" alt="Паштет">
+          <div class="menu-text">
+            <h3>Паштет из утки</h3>
+            <p>С хрустящим багетом</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://i.imgur.com/E4Ecs4G.jpg" alt="Рийет">
+          <div class="menu-text">
+            <h3>Рийет</h3>
+            <p>Свинина, мед, специи</p>
+          </div>
         </div>
       </section>
 
-      <section class="page" id="main">
+      <section class="page" style="background-image: url('https://i.imgur.com/9I7QGNd.jpg');">
         <h2>Основные блюда</h2>
         <div class="menu-item">
-          <h3>Жареный лосось</h3>
-          <p>Органический лосось на гриле с тушёным цикорным листом</p>
+          <img src="https://i.imgur.com/oZgPpZk.jpg" alt="Утка конфит">
+          <div class="menu-text">
+            <h3>Утка конфит</h3>
+            <p>Запечённая утка с апельсиновым соусом</p>
+          </div>
         </div>
         <div class="menu-item">
-          <h3>Тальята</h3>
-          <p>Рибай из говядины на гриле с картофелем</p>
+          <img src="https://i.imgur.com/FjVcKmQ.jpg" alt="Тальята">
+          <div class="menu-text">
+            <h3>Тальята</h3>
+            <p>Говядина с картофелем</p>
+          </div>
         </div>
         <div class="menu-item">
-          <h3>Равиоли с говядиной</h3>
-          <p>Запечённый соус с моцареллой, подаётся с альфредо</p>
-        </div>
-        <div class="menu-item">
-          <h3>Феттучини альфредо</h3>
-          <p>Феттучини, грибы, базилик, томаты в масле с лимонным соусом</p>
+          <img src="https://i.imgur.com/Nm9EGk0.jpg" alt="Рататуй">
+          <div class="menu-text">
+            <h3>Рататуй</h3>
+            <p>Традиционные овощи Прованса</p>
+          </div>
         </div>
       </section>
 
-      <section class="page" id="salads">
+      <section class="page" style="background-image: url('https://i.imgur.com/JcoKc8g.jpg');">
         <h2>Салаты</h2>
         <div class="menu-item">
-          <h3>Фарро</h3>
-          <p>Горячее копчение лосося, французские бобы, салат ромэн</p>
+          <img src="https://i.imgur.com/98a0sVJ.jpg" alt="Нисуаз">
+          <div class="menu-text">
+            <h3>Нисуаз</h3>
+            <p>Тунец, картофель, яйцо, фасоль</p>
+          </div>
         </div>
         <div class="menu-item">
-          <h3>Цезарь</h3>
-          <p>Курица, бекон, авокадо, салат ромэн, яйцо</p>
-        </div>
-        <div class="menu-item">
-          <h3>Красные бобы</h3>
-          <p>Бекон, курица, салат, помидоры, яйцо</p>
+          <img src="https://i.imgur.com/yiXP4Yc.jpg" alt="Фарро">
+          <div class="menu-text">
+            <h3>Фарро</h3>
+            <p>Злаки с овощами и зеленью</p>
+          </div>
         </div>
       </section>
 
-      <section class="page" id="dessert">
-        <h2>Десерт</h2>
+      <section class="page" style="background-image: url('https://i.imgur.com/v99BDHG.jpg');">
+        <h2>Десерты</h2>
         <div class="menu-item">
-          <h3>Тирамису</h3>
-          <p>Савоярди, пропитанное эспрессо со сладкими сливками</p>
+          <img src="https://i.imgur.com/gYrxtYY.jpg" alt="Тирамису">
+          <div class="menu-text">
+            <h3>Тирамису</h3>
+            <p>Савоярди с кремом и кофе</p>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="https://i.imgur.com/AsUeHzf.jpg" alt="Крем-брюле">
+          <div class="menu-text">
+            <h3>Крем-брюле</h3>
+            <p>Французский ванильный десерт</p>
+          </div>
         </div>
       </section>
     </main>
   </div>
 
+  <div class="nav-buttons">
+    <button onclick="changeSlide(-1)">&#10094;</button>
+    <button onclick="changeSlide(1)">&#10095;</button>
+  </div>
+
   <footer>
-    &copy; 2025 Ресторан | Все права защищены
+    &copy; 2025 Французский ресторан | Все права защищены
   </footer>
 
   <script>
-    const container = document.getElementById('swipe-container');
     const content = document.getElementById('swipe-content');
-    let startX = 0;
-    let currentTranslate = 0;
     let currentPage = 0;
+    const totalPages = 4;
 
-    container.addEventListener('touchstart', e => {
+    function changeSlide(delta) {
+      currentPage = Math.max(0, Math.min(totalPages - 1, currentPage + delta));
+      content.style.transform = `translateX(-${currentPage * 100}vw)`;
+    }
+
+    let startX = 0;
+    content.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
     });
+    content.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (diff > 50) changeSlide(1);
+      if (diff < -50) changeSlide(-1);
+    });
 
-    container.addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      let diff = startX - endX;
-
-      if (diff > 50 && currentPage < 3) {
-        currentPage++;
-      } else if (diff < -50 && currentPage > 0) {
-        currentPage--;
-      }
-
-      content.style.transform = `translateX(-${currentPage * 100}vw)`;
+    content.addEventListener('mousedown', e => {
+      startX = e.clientX;
+    });
+    content.addEventListener('mouseup', e => {
+      const diff = startX - e.clientX;
+      if (diff > 50) changeSlide(1);
+      if (diff < -50) changeSlide(-1);
     });
   </script>
 </body>
