@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню Ресторана</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #fffaf2;
+      color: #333;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+    header h1 {
+      font-size: 48px;
+      font-family: 'Great Vibes', cursive;
+      margin-bottom: 0;
+    }
+    section {
+      min-height: 100vh;
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+      scroll-snap-align: start;
+    }
+    h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    .menu-item {
+      margin-bottom: 25px;
+    }
+    .menu-item h3 {
+      margin: 0;
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    .menu-item p {
+      margin: 5px 0 0;
+      color: #666;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 10px 20px;
+      font-size: 14px;
+      color: #888;
+    }
+
+    main {
+      display: flex;
+      flex-direction: row;
+      width: 400vw;
+      transition: transform 0.5s ease-in-out;
+    }
+    .page {
+      width: 100vw;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Меню</h1>
+  </header>
+
+  <div id="swipe-container" style="overflow: hidden;">
+    <main id="swipe-content">
+      <section class="page" id="appetizers">
+        <h2>Закуски</h2>
+        <div class="menu-item">
+          <h3>Буффало Капрезе</h3>
+          <p>Свежая моцарелла с помидорами черри и базиликом</p>
+        </div>
+        <div class="menu-item">
+          <h3>Свежий тунец</h3>
+          <p>Тёплая куриная грудка, бекон, авокадо, салат, ромэн, помидоры</p>
+        </div>
+      </section>
+
+      <section class="page" id="main">
+        <h2>Основные блюда</h2>
+        <div class="menu-item">
+          <h3>Жареный лосось</h3>
+          <p>Органический лосось на гриле с тушёным цикорным листом</p>
+        </div>
+        <div class="menu-item">
+          <h3>Тальята</h3>
+          <p>Рибай из говядины на гриле с картофелем</p>
+        </div>
+        <div class="menu-item">
+          <h3>Равиоли с говядиной</h3>
+          <p>Запечённый соус с моцареллой, подаётся с альфредо</p>
+        </div>
+        <div class="menu-item">
+          <h3>Феттучини альфредо</h3>
+          <p>Феттучини, грибы, базилик, томаты в масле с лимонным соусом</p>
+        </div>
+      </section>
+
+      <section class="page" id="salads">
+        <h2>Салаты</h2>
+        <div class="menu-item">
+          <h3>Фарро</h3>
+          <p>Горячее копчение лосося, французские бобы, салат ромэн</p>
+        </div>
+        <div class="menu-item">
+          <h3>Цезарь</h3>
+          <p>Курица, бекон, авокадо, салат ромэн, яйцо</p>
+        </div>
+        <div class="menu-item">
+          <h3>Красные бобы</h3>
+          <p>Бекон, курица, салат, помидоры, яйцо</p>
+        </div>
+      </section>
+
+      <section class="page" id="dessert">
+        <h2>Десерт</h2>
+        <div class="menu-item">
+          <h3>Тирамису</h3>
+          <p>Савоярди, пропитанное эспрессо со сладкими сливками</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    &copy; 2025 Ресторан | Все права защищены
+  </footer>
+
+  <script>
+    const container = document.getElementById('swipe-container');
+    const content = document.getElementById('swipe-content');
+    let startX = 0;
+    let currentTranslate = 0;
+    let currentPage = 0;
+
+    container.addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+
+    container.addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      let diff = startX - endX;
+
+      if (diff > 50 && currentPage < 3) {
+        currentPage++;
+      } else if (diff < -50 && currentPage > 0) {
+        currentPage--;
+      }
+
+      content.style.transform = `translateX(-${currentPage * 100}vw)`;
+    });
+  </script>
+</body>
+</html>
