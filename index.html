@@ -54,7 +54,6 @@
       border-radius: 8px;
       padding: 15px;
       margin-bottom: 15px;
-      cursor: pointer;
       transition: background 0.3s;
     }
     .menu-item:hover {
@@ -70,27 +69,6 @@
       margin: 4px 0 0;
       font-size: 14px;
       color: #ddd;
-    }
-    .lightbox {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.9);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .lightbox img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 10px;
-    }
-    .lightbox.active {
-      opacity: 1;
-      pointer-events: all;
     }
     footer {
       text-align: center;
@@ -109,84 +87,80 @@
     <main id="swipe-content">
       <section class="page" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80');">
         <h2>Закуски</h2>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?caprese">
+        <div class="menu-item">
           <h3>Капрезе</h3>
           <p>Моцарелла, томаты, базилик</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?pate">
+        <div class="menu-item">
           <h3>Паштет из утки</h3>
           <p>С хрустящим багетом</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?meat">
+        <div class="menu-item">
           <h3>Рийет</h3>
           <p>Свинина, мед, специи</p>
         </div>
       </section>
-      <section class="page" style="background-image: url('https://images.app.goo.gl/iPXsZaST8UERk3Ry9');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=80');">
         <h2>Основные блюда</h2>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?duck">
+        <div class="menu-item">
           <h3>Утка конфит</h3>
           <p>Запечённая утка с апельсиновым соусом</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?steak">
+        <div class="menu-item">
           <h3>Стейк</h3>
           <p>Говядина с картофелем</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?ratatouille">
+        <div class="menu-item">
           <h3>Рататуй</h3>
           <p>Овощи по-провански</p>
         </div>
       </section>
-      <section class="page" style="background-image: url('https://images.app.goo.gl/ZAS8MzWhZQF4EeCN8');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1612197520445-82f4f1e4a345?auto=format&fit=crop&w=1400&q=80');">
         <h2>Салаты</h2>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?salad">
+        <div class="menu-item">
           <h3>Нисуаз</h3>
           <p>Тунец, картофель, яйцо, фасоль</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?vegetable-salad">
+        <div class="menu-item">
           <h3>Фарро</h3>
           <p>Злаки с овощами и зеленью</p>
         </div>
       </section>
-      <section class="page" style="background-image: url('https://images.app.goo.gl/hqaz6P6s9DBMuCLq8');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1400&q=80');">
         <h2>Десерты</h2>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?tiramisu">
+        <div class="menu-item">
           <h3>Тирамису</h3>
           <p>Кофейный крем-десерт</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?creme-brulee">
+        <div class="menu-item">
           <h3>Крем-брюле</h3>
           <p>Французский ванильный десерт</p>
         </div>
       </section>
-      <section class="page" style="background-image: url('https://images.app.goo.gl/urXdwUSFHWCaTdWE7');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1601979041483-00bcb92908ba?auto=format&fit=crop&w=1400&q=80');">
         <h2>Напитки</h2>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?red-wine">
+        <div class="menu-item">
           <h3>Красное вино</h3>
           <p>Бургундия, сухое</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?white-wine">
+        <div class="menu-item">
           <h3>Белое вино</h3>
           <p>Шабли, охлаждённое</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?champagne">
+        <div class="menu-item">
           <h3>Шампанское</h3>
           <p>Классическое игристое</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?lemonade">
+        <div class="menu-item">
           <h3>Домашний лимонад</h3>
           <p>Лимон, мята, лёд</p>
         </div>
-        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?coffee">
+        <div class="menu-item">
           <h3>Кофе</h3>
           <p>Эспрессо или капучино</p>
         </div>
       </section>
     </main>
-  </div>
-
-  <div class="lightbox" id="lightbox">
-    <img id="lightbox-img" src="" alt="Блюдо">
   </div>
 
   <footer>
@@ -216,19 +190,6 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight') changeSlide(1);
       if (e.key === 'ArrowLeft') changeSlide(-1);
-    });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    document.querySelectorAll('.menu-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.getAttribute('data-img');
-        lightboxImg.src = img;
-        lightbox.classList.add('active');
-      });
-    });
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
     });
   </script>
 </body>
