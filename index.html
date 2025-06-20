@@ -50,30 +50,47 @@
       padding-bottom: 5px;
     }
     .menu-item {
-      display: flex;
-      align-items: center;
-      margin: 15px 0;
-      gap: 15px;
       background: rgba(255,255,255,0.1);
       border-radius: 8px;
-      padding: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .menu-item img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 8px;
+    .menu-item:hover {
+      background: rgba(255,255,255,0.2);
     }
-    .menu-text h3 {
+    .menu-item h3 {
       margin: 0;
-      font-size: 16px;
+      font-size: 18px;
       text-transform: uppercase;
       color: #fff;
     }
-    .menu-text p {
+    .menu-item p {
       margin: 4px 0 0;
-      font-size: 13px;
+      font-size: 14px;
       color: #ddd;
+    }
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
     }
     footer {
       text-align: center;
@@ -92,87 +109,61 @@
     <main id="swipe-content">
       <section class="page" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80');">
         <h2>Закуски</h2>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?caprese" alt="Капрезе">
-          <div class="menu-text">
-            <h3>Капрезе</h3>
-            <p>Моцарелла, томаты, базилик</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?caprese">
+          <h3>Капрезе</h3>
+          <p>Моцарелла, томаты, базилик</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?pate" alt="Паштет">
-          <div class="menu-text">
-            <h3>Паштет из утки</h3>
-            <p>С хрустящим багетом</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?pate">
+          <h3>Паштет из утки</h3>
+          <p>С хрустящим багетом</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?meat" alt="Рийет">
-          <div class="menu-text">
-            <h3>Рийет</h3>
-            <p>Свинина, мед, специи</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?meat">
+          <h3>Рийет</h3>
+          <p>Свинина, мед, специи</p>
         </div>
       </section>
-      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1559628233-4b8c3fba1b6e?auto=format&fit=crop&w=1400&q=80');">
+      <section class="page" style="background-image: url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=80');">
         <h2>Основные блюда</h2>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?duck" alt="Утка конфит">
-          <div class="menu-text">
-            <h3>Утка конфит</h3>
-            <p>Запечённая утка с апельсиновым соусом</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?duck">
+          <h3>Утка конфит</h3>
+          <p>Запечённая утка с апельсиновым соусом</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?steak" alt="Стейк">
-          <div class="menu-text">
-            <h3>Стейк</h3>
-            <p>Говядина с картофелем</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?steak">
+          <h3>Стейк</h3>
+          <p>Говядина с картофелем</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?ratatouille" alt="Рататуй">
-          <div class="menu-text">
-            <h3>Рататуй</h3>
-            <p>Овощи по-провански</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?ratatouille">
+          <h3>Рататуй</h3>
+          <p>Овощи по-провански</p>
         </div>
       </section>
       <section class="page" style="background-image: url('https://images.unsplash.com/photo-1605478759808-7e33e39990ab?auto=format&fit=crop&w=1400&q=80');">
         <h2>Салаты</h2>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?salad" alt="Нисуаз">
-          <div class="menu-text">
-            <h3>Нисуаз</h3>
-            <p>Тунец, картофель, яйцо, фасоль</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?salad">
+          <h3>Нисуаз</h3>
+          <p>Тунец, картофель, яйцо, фасоль</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?vegetable-salad" alt="Фарро">
-          <div class="menu-text">
-            <h3>Фарро</h3>
-            <p>Злаки с овощами и зеленью</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?vegetable-salad">
+          <h3>Фарро</h3>
+          <p>Злаки с овощами и зеленью</p>
         </div>
       </section>
       <section class="page" style="background-image: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1400&q=80');">
         <h2>Десерты</h2>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?tiramisu" alt="Тирамису">
-          <div class="menu-text">
-            <h3>Тирамису</h3>
-            <p>Кофейный крем-десерт</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?tiramisu">
+          <h3>Тирамису</h3>
+          <p>Кофейный крем-десерт</p>
         </div>
-        <div class="menu-item">
-          <img src="https://source.unsplash.com/60x60/?creme-brulee" alt="Крем-брюле">
-          <div class="menu-text">
-            <h3>Крем-брюле</h3>
-            <p>Французский ванильный десерт</p>
-          </div>
+        <div class="menu-item" data-img="https://source.unsplash.com/800x600/?creme-brulee">
+          <h3>Крем-брюле</h3>
+          <p>Французский ванильный десерт</p>
         </div>
       </section>
     </main>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Блюдо">
   </div>
 
   <footer>
@@ -189,7 +180,6 @@
       content.style.transform = `translateX(-${currentPage * 100}vw)`;
     }
 
-    // Touch-свайпы для мобильных
     let startX = 0;
     content.addEventListener('touchstart', e => {
       startX = e.touches[0].clientX;
@@ -200,10 +190,23 @@
       if (diff < -50) changeSlide(-1);
     });
 
-    // Клавиши на ПК
     document.addEventListener('keydown', e => {
       if (e.key === 'ArrowRight') changeSlide(1);
       if (e.key === 'ArrowLeft') changeSlide(-1);
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.menu-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const img = item.getAttribute('data-img');
+        lightboxImg.src = img;
+        lightbox.classList.add('active');
+      });
+    });
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
     });
   </script>
 </body>
